@@ -1,0 +1,39 @@
+<!-- <% @articles.each do |article| %>
+%= article['title'] %> <br>
+<% end %>
+--> 
+
+
+<form action='/articles_new' method='get'>
+  <p>New Stories</p>
+  <select name='new_story' id='new_story'> 
+       <!-- can now access saying params['new_story'] -->
+    <% @new.each do |story| %>
+      <% title = story["title"] %>
+      <option value="<%= title %>"><%= title %></option>
+    <% end %>
+  </select>
+  <input type='submit'>
+</form>
+
+<form action='/articles_rising' method='get'>
+  <p>Rising Stories</p>
+  <select name='rising_story' id='rising_story'>
+    <% @rising.each do |story| %>
+      <% title = story["title"] %>
+      <option value="<%= title %>"><%= title %></option>
+    <% end %>
+  </select>
+  <input type='submit'>
+</form>
+
+<form action='/articles_hot' method='get'>
+  <p>Hot Stories</p>
+  <select name='hot_story' id='hot_story'>
+    <% @hot.each do |story| %>
+      <% title = story["title"] %>
+      <option value="<%= title %>"><%= title %></option>
+    <% end %>
+  </select>
+  <input type='submit'>
+</form>

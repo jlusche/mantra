@@ -1,0 +1,7 @@
+<% @hot.each do |story|%>
+  <% if story.has_value?(@hot_story) %>
+    <img src=<%= story["image"] %> >
+    <h3><%= story["author"] %></h3><br>
+    <%= story["content"]["plain"] %>
+  <% end %>
+<% end %>
